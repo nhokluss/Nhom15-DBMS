@@ -1,97 +1,97 @@
-use HQT-CSDL_ThucHanh_Nhom15
-go
+USE DBMS_Demo
+GO
 ----------------------------------------------------------------------------------------
--- 1) ThanhTien = (SoLuong * Gia) 
+---- 1) ThanhTien = (SoLuong * Gia) 
 -- update SoLuong CHITIETDONHANG
-create trigger trigger_ThanhTien_updateSL
-on CHITIETDONHANG
-for insert, update, delete as
-if update (SoLuong) 
-begin
-	if exists (select ctdh.SoLuong from CHITIETDONHANG ctdh where ctdh.SoLuong <= 0)
-	begin
-		 raiserror(N'Số lượng sản phẩm không hợp lệ', 10, 1)
-		 rollback transaction
-	end
+CREATE TRIGGER trigger_ThanhTien_updateSL
+ON CHITIETDONHANG
+FOR INSERT, UPDATE, DELETE AS
+IF UPDATE (SoLuong) 
+BEGIN
+	IF EXISTS (SELECT ctdh.SoLuong FROM CHITIETDONHANG ctdh WHERE ctdh.SoLuong <= 0)
+	BEGIN
+		 RAISERROR(N'Số lượng sản phẩm không hợp lệ', 10, 1)
+		 ROLLBACK TRANSACTION
+	END
 	
-	update CHITIETDONHANG
-	set ThanhTien = (ctdh.SoLuong * sp.Gia)
-	from CHITIETDONHANG ctdh, inserted i, SANPHAM sp
-	where sp.MaSP = i.MaSP and
-			ctdh.MaSP = sp.MaSP 
-end
+	UPDATE CHITIETDONHANG
+	SET ThanhTien = (ctdh.SoLuong * td.Gia)
+	FROM CHITIETDONHANG ctdh, inserted i, THUCDON td
+	WHERE td.IDMonAn = i.IDMonAn AND
+			ctdh.IDMonAn = td.IDMonAn 
+END
 
 -- update Gia SANPHAM
-create trigger trigger_ThanhTien_updateSP
-on SANPHAM
-for insert, update, delete as
-if update (Gia)
-begin
-	if exists (select sp.Gia from SANPHAM sp where sp.Gia <= 0)
-	begin
-		 raiserror(N'Giá sản phẩm không hợp lệ', 10, 1)
-		 rollback transaction
-	end
+CREATE TRIGGER trigger_ThanhTien_updateMonAn
+ON THUCDON
+FOR INSERT, UPDATE, DELETE AS
+IF UPDATE (Gia)
+BEGIN
+	IF EXISTS (SELECT td.Gia FROM THUCDON td WHERE td.Gia <= 0)
+	BEGIN
+		 RAISERROR(N'Giá sản phẩm không hợp lệ', 10, 1)
+		 ROLLBACK TRANSACTION
+	END
 	
-	update CHITIETDONHANG
-	set ThanhTien = ctdh.SoLuong * sp.Gia
-	from CHITIETDONHANG ctdh, inserted i, SANPHAM sp
-	where sp.MaSP = i.MaSP and
-			ctdh.MaSP = sp.MaSP 
-end
+	UPDATE CHITIETDONHANG
+	SET ThanhTien = ctdh.SoLuong * td.Gia
+	FROM CHITIETDONHANG ctdh, inserted i, THUCDON td
+	WHERE td.IDMonAn = i.IDMonAn AND
+			ctdh.IDMonAn = td.IDMonAn 
+END
 
 
--- 2) Tổng tiền = PhiVanChuyen + sum(CHITIETHOADON.ThanhTien)
+---- 2) Tổng tiền = PhiVanChuyen + sum(CHITIETHOADON.ThanhTien)
 -- update CHITIETDONHANG
-create trigger trigger_TongTien
-on CHITIETDONHANG
-for insert, update, delete as
-begin
-	update DONHANG
-	set TongTien = PhiVanChuyen + (select sum(ctdh.ThanhTien)
-									from CHITIETDONHANG ctdh
-									where ctdh.MaDH = DONHANG.MaDH)
-	where 
-		exists (select * from inserted i where i.MaDH = DONHANG.MaDH) or
-		exists (select * from deleted d where d.MaDH = DONHANG.MaDH) 
-end
+CREATE TRIGGER trigger_TongTien
+ON CHITIETDONHANG
+FOR INSERT, UPDATE, DELETE AS
+BEGIN
+	UPDATE DONHANG
+	SET TongTien = PhiVanChuyen + (SELECT SUM(ctdh.ThanhTien)
+									FROM CHITIETDONHANG ctdh
+									WHERE ctdh.MaDH = DONHANG.MaDH)
+	WHERE 
+		EXISTS (SELECT * FROM inserted i WHERE i.MaDH = DONHANG.MaDH) OR
+		EXISTS (SELECT * FROM deleted d WHERE d.MaDH = DONHANG.MaDH) 
+END
 
 -- update PhiVanChuyen DONHANG
-create trigger trigger_TongTien_updatePVC
-on DONHANG
-for insert, update, delete as
-if update (PhiVanChuyen)
-begin
-	if exists (select dh.PhiVanChuyen from DONHANG dh where dh.PhiVanChuyen < 0)
-	begin
-		 raiserror(N'Phí vận chuyển không hợp lệ', 10, 1)
-		 rollback transaction
-	end
-	update DONHANG
-	set TongTien = PhiVanChuyen + (select sum(ctdh.ThanhTien)
-									from CHITIETDONHANG ctdh
-									where ctdh.MaDH = DONHANG.MaDH)
-	where 
-		exists (select * from inserted i where i.MaDH = DONHANG.MaDH) or
-		exists (select * from deleted d where d.MaDH = DONHANG.MaDH) 
-end
+CREATE TRIGGER trigger_TongTien_updatePVC
+ON DONHANG
+FOR INSERT, UPDATE, DELETE AS
+IF UPDATE (PhiVanChuyen)
+BEGIN
+	IF EXISTS (SELECT dh.PhiVanChuyen FROM DONHANG dh WHERE dh.PhiVanChuyen < 0)
+	BEGIN
+		 RAISERROR(N'Phí vận chuyển không hợp lệ', 10, 1)
+		 ROLLBACK TRANSACTION
+	END
+	UPDATE DONHANG
+	SET TongTien = PhiVanChuyen + (SELECT SUM(ctdh.ThanhTien)
+									FROM CHITIETDONHANG ctdh
+									WHERE ctdh.MaDH = DONHANG.MaDH)
+	WHERE 
+		EXISTS (SELECT * FROM inserted i WHERE i.MaDH = DONHANG.MaDH) OR
+		EXISTS (SELECT * FROM deleted d WHERE d.MaDH = DONHANG.MaDH) 
+END
 
 ----------------------------------------------------------------------------------
 -- Test for triggers
-insert into SANPHAM (TenSP, Gia) values (N'Chocolate', 10000)
-insert into CHITIETDONHANG (MaDH, MaSP, SoLuong) values (N'1', N'2001', 10)
+INSERT INTO THUCDON (MonAN, Gia) VALUES (N'mắm cá thu', 10000)
+INSERT INTO CHITIETDONHANG (MaDH, IDMonAn, SoLuong) VALUES (N'1', N'1002', 10)
 
-delete from CHITIETDONHANG where MaDH = N'1' and MaSP = N'2001'
-delete from SANPHAM where MaSP = N'2001'
+DELETE FROM CHITIETDONHANG WHERE MaDH = N'1' AND IDMonAn = N'1001'
+DELETE FROM THUCDON WHERE IDMonAn = N'1002'
 
-update CHITIETDONHANG set SoLuong = -3 where MaDH = N'1' and MaSP = N'2001'	-- fail
+UPDATE CHITIETDONHANG SET SoLuong = -3 WHERE MaDH = N'1' AND IDMonAn = N'1001'	-- fail
 
-update SANPHAM set Gia = 20000  where MaSP = N'2001' 		-- success
+UPDATE THUCDON SET Gia = 20000  WHERE MaSP = N'1001' 		-- success
 
-update SANPHAM set Gia = -10000 where MaSP = N'2001'		-- fail
+UPDATE THUCDON SET Gia = -10000 WHERE MaSP = N'1001'		-- fail
 
-update DONHANG set PhiVanChuyen = -10 where MaDH = N'1'		-- fail
+UPDATE DONHANG SET PhiVanChuyen = -10 WHERE MaDH = N'1'		-- fail
 
-select * from CHITIETDONHANG where MaDH = '1'
-select * from DONHANG where MaDH = '1'
-select * from SANPHAM where MaSP = '2001'
+SELECT * FROM CHITIETDONHANG WHERE MaDH = '1'
+SELECT * FROM DONHANG WHERE MaDH = '1'
+SELECT * FROM dbo.THUCDON where IDMonAn = '1001'
