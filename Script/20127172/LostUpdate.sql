@@ -1,6 +1,8 @@
 ﻿use DBMS_Demo
 go
 ----------------------------
+-- DROP PROCEDURE TX_danhan_DH
+-- DROP PROCEDURE KH_huyDH
 --Transaction 1: Tài xế cập nhật trạng thái đơn hàng “Đã nhận”
 create procedure TX_danhan_DH 
 	@MaDH nvarchar(10),

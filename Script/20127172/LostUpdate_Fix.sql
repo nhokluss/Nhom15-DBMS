@@ -1,6 +1,7 @@
 ﻿use DBMS_Demo
-go
+GO
 ----------------------------
+--Transaction 1: Tài xế cập nhật trạng thái đơn hàng “Đã nhận”
 alter procedure TX_danhan_DH 
 	@MaDH nvarchar(10),
 	@TinhTrang nvarchar(20)
