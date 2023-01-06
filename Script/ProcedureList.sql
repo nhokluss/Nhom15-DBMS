@@ -130,18 +130,25 @@ begin tran
 	update dbo.THUCDON set MonAN = @MonAn, Gia = @Gia, MoTa = @MoTa where IDMonAn = @IDMonAn
 commit tran
 go
-
+DROP PROCEDURE dbo.addMonAn
 -- Thêm món
 create procedure addMonAn
 	@MonAn nvarchar(150),
 	@Gia bigint,
 	@MoTa nvarchar(200)
 as
-begin tran
-	insert into THUCDON (MonAN, Gia, MoTa) values (@MonAn, @Gia, @MoTa)
-	commit tran
-go
-
+begin TRAN
+	IF EXISTS(SELECT*FROM dbo.THUCDON WHERE MonAN=@MonAn)
+	BEGIN
+		RAISERROR (N'Món ăn đã tồn tại', 10, 1)
+		ROLLBACK TRAN
+    END
+	ELSE
+    BEGIN
+	insert INTO THUCDON (MonAn, Gia, MoTa) values (@MonAn, @Gia, @MoTa)
+	commit TRAN
+    END
+GO
 -- Hủy Đơn hàng
 create or alter procedure Cancel_Order
 	@MaDH int
@@ -210,5 +217,6 @@ commit tran
 go
 
 
+-- update số lượng sản phẩm
 
-
+ 
