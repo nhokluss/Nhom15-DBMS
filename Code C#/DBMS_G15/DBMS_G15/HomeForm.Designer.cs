@@ -73,8 +73,9 @@ namespace DBMS_G15
             this.panel1.Controls.Add(this.greetingLabel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1055, 68);
+            this.panel1.Size = new System.Drawing.Size(1407, 84);
             this.panel1.TabIndex = 1;
             // 
             // panelLogo
@@ -84,8 +85,9 @@ namespace DBMS_G15
             this.panelLogo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(247, 68);
+            this.panelLogo.Size = new System.Drawing.Size(329, 84);
             this.panelLogo.TabIndex = 2;
             this.panelLogo.Click += new System.EventHandler(this.panelLogo_Click);
             // 
@@ -95,9 +97,10 @@ namespace DBMS_G15
             this.logoLabel.BackColor = System.Drawing.Color.Transparent;
             this.logoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logoLabel.ForeColor = System.Drawing.Color.Gainsboro;
-            this.logoLabel.Location = new System.Drawing.Point(116, 20);
+            this.logoLabel.Location = new System.Drawing.Point(155, 25);
+            this.logoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.logoLabel.Name = "logoLabel";
-            this.logoLabel.Size = new System.Drawing.Size(117, 29);
+            this.logoLabel.Size = new System.Drawing.Size(143, 36);
             this.logoLabel.TabIndex = 4;
             this.logoLabel.Text = "Nhóm 15";
             this.logoLabel.Click += new System.EventHandler(this.logoLabel_Click);
@@ -108,8 +111,9 @@ namespace DBMS_G15
             this.logoPic.Dock = System.Windows.Forms.DockStyle.Left;
             this.logoPic.Image = ((System.Drawing.Image)(resources.GetObject("logoPic.Image")));
             this.logoPic.Location = new System.Drawing.Point(0, 0);
+            this.logoPic.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.logoPic.Name = "logoPic";
-            this.logoPic.Size = new System.Drawing.Size(95, 68);
+            this.logoPic.Size = new System.Drawing.Size(127, 84);
             this.logoPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logoPic.TabIndex = 3;
             this.logoPic.TabStop = false;
@@ -119,9 +123,10 @@ namespace DBMS_G15
             // 
             this.userAvatar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.userAvatar.Image = ((System.Drawing.Image)(resources.GetObject("userAvatar.Image")));
-            this.userAvatar.Location = new System.Drawing.Point(974, 9);
+            this.userAvatar.Location = new System.Drawing.Point(1299, 11);
+            this.userAvatar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.userAvatar.Name = "userAvatar";
-            this.userAvatar.Size = new System.Drawing.Size(81, 50);
+            this.userAvatar.Size = new System.Drawing.Size(108, 62);
             this.userAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.userAvatar.TabIndex = 3;
             this.userAvatar.TabStop = false;
@@ -133,9 +138,10 @@ namespace DBMS_G15
             this.greetingLabel.BackColor = System.Drawing.Color.Transparent;
             this.greetingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.greetingLabel.ForeColor = System.Drawing.Color.Gainsboro;
-            this.greetingLabel.Location = new System.Drawing.Point(724, 20);
+            this.greetingLabel.Location = new System.Drawing.Point(965, 25);
+            this.greetingLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.greetingLabel.Name = "greetingLabel";
-            this.greetingLabel.Size = new System.Drawing.Size(244, 29);
+            this.greetingLabel.Size = new System.Drawing.Size(297, 36);
             this.greetingLabel.TabIndex = 1;
             this.greetingLabel.Text = "Xin chào, username";
             this.greetingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -157,9 +163,10 @@ namespace DBMS_G15
             this.menuPanel.Controls.Add(this.btnLogout);
             this.menuPanel.Controls.Add(this.navMenu);
             this.menuPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.menuPanel.Location = new System.Drawing.Point(0, 68);
+            this.menuPanel.Location = new System.Drawing.Point(0, 84);
+            this.menuPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.menuPanel.Name = "menuPanel";
-            this.menuPanel.Size = new System.Drawing.Size(265, 583);
+            this.menuPanel.Size = new System.Drawing.Size(353, 717);
             this.menuPanel.TabIndex = 2;
             // 
             // btnMoney
@@ -171,9 +178,10 @@ namespace DBMS_G15
             this.btnMoney.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMoney.Image = ((System.Drawing.Image)(resources.GetObject("btnMoney.Image")));
             this.btnMoney.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMoney.Location = new System.Drawing.Point(0, 560);
+            this.btnMoney.Location = new System.Drawing.Point(0, 688);
+            this.btnMoney.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMoney.Name = "btnMoney";
-            this.btnMoney.Size = new System.Drawing.Size(246, 70);
+            this.btnMoney.Size = new System.Drawing.Size(330, 86);
             this.btnMoney.TabIndex = 19;
             this.btnMoney.Text = "  Thu Nhập";
             this.btnMoney.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -190,9 +198,10 @@ namespace DBMS_G15
             this.btnContract.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContract.Image = ((System.Drawing.Image)(resources.GetObject("btnContract.Image")));
             this.btnContract.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnContract.Location = new System.Drawing.Point(0, 490);
+            this.btnContract.Location = new System.Drawing.Point(0, 602);
+            this.btnContract.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnContract.Name = "btnContract";
-            this.btnContract.Size = new System.Drawing.Size(246, 70);
+            this.btnContract.Size = new System.Drawing.Size(330, 86);
             this.btnContract.TabIndex = 18;
             this.btnContract.Text = "  Hợp Đồng";
             this.btnContract.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -209,9 +218,10 @@ namespace DBMS_G15
             this.btnPartner.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPartner.Image = ((System.Drawing.Image)(resources.GetObject("btnPartner.Image")));
             this.btnPartner.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPartner.Location = new System.Drawing.Point(0, 420);
+            this.btnPartner.Location = new System.Drawing.Point(0, 516);
+            this.btnPartner.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPartner.Name = "btnPartner";
-            this.btnPartner.Size = new System.Drawing.Size(246, 70);
+            this.btnPartner.Size = new System.Drawing.Size(330, 86);
             this.btnPartner.TabIndex = 17;
             this.btnPartner.Text = "  Đối Tác";
             this.btnPartner.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -228,9 +238,10 @@ namespace DBMS_G15
             this.btnDriver.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDriver.Image = ((System.Drawing.Image)(resources.GetObject("btnDriver.Image")));
             this.btnDriver.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDriver.Location = new System.Drawing.Point(0, 350);
+            this.btnDriver.Location = new System.Drawing.Point(0, 430);
+            this.btnDriver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDriver.Name = "btnDriver";
-            this.btnDriver.Size = new System.Drawing.Size(246, 70);
+            this.btnDriver.Size = new System.Drawing.Size(330, 86);
             this.btnDriver.TabIndex = 16;
             this.btnDriver.Text = "  Tài Xế";
             this.btnDriver.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -247,9 +258,10 @@ namespace DBMS_G15
             this.btnStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStaff.Image = ((System.Drawing.Image)(resources.GetObject("btnStaff.Image")));
             this.btnStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnStaff.Location = new System.Drawing.Point(0, 280);
+            this.btnStaff.Location = new System.Drawing.Point(0, 344);
+            this.btnStaff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnStaff.Name = "btnStaff";
-            this.btnStaff.Size = new System.Drawing.Size(246, 70);
+            this.btnStaff.Size = new System.Drawing.Size(330, 86);
             this.btnStaff.TabIndex = 15;
             this.btnStaff.Text = "  Nhân Viên";
             this.btnStaff.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -266,9 +278,10 @@ namespace DBMS_G15
             this.btnCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomer.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomer.Image")));
             this.btnCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCustomer.Location = new System.Drawing.Point(0, 210);
+            this.btnCustomer.Location = new System.Drawing.Point(0, 258);
+            this.btnCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCustomer.Name = "btnCustomer";
-            this.btnCustomer.Size = new System.Drawing.Size(246, 70);
+            this.btnCustomer.Size = new System.Drawing.Size(330, 86);
             this.btnCustomer.TabIndex = 14;
             this.btnCustomer.Text = "  Khách Hàng";
             this.btnCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -285,9 +298,10 @@ namespace DBMS_G15
             this.btnOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnOrder.Image")));
             this.btnOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnOrder.Location = new System.Drawing.Point(0, 140);
+            this.btnOrder.Location = new System.Drawing.Point(0, 172);
+            this.btnOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnOrder.Name = "btnOrder";
-            this.btnOrder.Size = new System.Drawing.Size(246, 70);
+            this.btnOrder.Size = new System.Drawing.Size(330, 86);
             this.btnOrder.TabIndex = 13;
             this.btnOrder.Text = "  Đơn Hàng";
             this.btnOrder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -305,9 +319,10 @@ namespace DBMS_G15
             this.btnProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProduct.Image = ((System.Drawing.Image)(resources.GetObject("btnProduct.Image")));
             this.btnProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnProduct.Location = new System.Drawing.Point(0, 70);
+            this.btnProduct.Location = new System.Drawing.Point(0, 86);
+            this.btnProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnProduct.Name = "btnProduct";
-            this.btnProduct.Size = new System.Drawing.Size(246, 70);
+            this.btnProduct.Size = new System.Drawing.Size(330, 86);
             this.btnProduct.TabIndex = 12;
             this.btnProduct.Text = "  Sản Phẩm";
             this.btnProduct.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -325,8 +340,9 @@ namespace DBMS_G15
             this.btnProfile.Image = ((System.Drawing.Image)(resources.GetObject("btnProfile.Image")));
             this.btnProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnProfile.Location = new System.Drawing.Point(0, 0);
+            this.btnProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(246, 70);
+            this.btnProfile.Size = new System.Drawing.Size(330, 86);
             this.btnProfile.TabIndex = 11;
             this.btnProfile.Text = "  Hồ Sơ";
             this.btnProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -344,9 +360,10 @@ namespace DBMS_G15
             this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(0, 630);
+            this.btnLogout.Location = new System.Drawing.Point(0, 774);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(246, 70);
+            this.btnLogout.Size = new System.Drawing.Size(330, 86);
             this.btnLogout.TabIndex = 7;
             this.btnLogout.Text = "  Đăng Xuất";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -358,8 +375,9 @@ namespace DBMS_G15
             // 
             this.navMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.navMenu.Location = new System.Drawing.Point(0, 0);
+            this.navMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.navMenu.Name = "navMenu";
-            this.navMenu.Size = new System.Drawing.Size(10, 70);
+            this.navMenu.Size = new System.Drawing.Size(13, 86);
             this.navMenu.TabIndex = 10;
             // 
             // childFormPanel
@@ -373,19 +391,22 @@ namespace DBMS_G15
             this.childFormPanel.Controls.Add(this.label4);
             this.childFormPanel.Controls.Add(this.label3);
             this.childFormPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.childFormPanel.Location = new System.Drawing.Point(265, 68);
+            this.childFormPanel.Location = new System.Drawing.Point(353, 84);
+            this.childFormPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.childFormPanel.Name = "childFormPanel";
-            this.childFormPanel.Size = new System.Drawing.Size(790, 583);
+            this.childFormPanel.Size = new System.Drawing.Size(1054, 717);
             this.childFormPanel.TabIndex = 3;
+            this.childFormPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.childFormPanel_Paint);
             // 
             // label10
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(322, 364);
+            this.label10.Location = new System.Drawing.Point(430, 447);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(221, 29);
+            this.label10.Size = new System.Drawing.Size(273, 36);
             this.label10.TabIndex = 7;
             this.label10.Text = "Trương Minh Nhựt";
             // 
@@ -394,9 +415,10 @@ namespace DBMS_G15
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(322, 306);
+            this.label9.Location = new System.Drawing.Point(430, 376);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(142, 29);
+            this.label9.Size = new System.Drawing.Size(173, 36);
             this.label9.TabIndex = 6;
             this.label9.Text = "Lê Yến Nhi";
             // 
@@ -405,9 +427,10 @@ namespace DBMS_G15
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(322, 248);
+            this.label8.Location = new System.Drawing.Point(430, 304);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(277, 29);
+            this.label8.Size = new System.Drawing.Size(339, 36);
             this.label8.TabIndex = 5;
             this.label8.Text = "Nguyễn Quang Trường";
             // 
@@ -416,9 +439,10 @@ namespace DBMS_G15
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(191, 364);
+            this.label7.Location = new System.Drawing.Point(256, 447);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(125, 29);
+            this.label7.Size = new System.Drawing.Size(159, 36);
             this.label7.TabIndex = 4;
             this.label7.Text = "19127237";
             // 
@@ -427,9 +451,10 @@ namespace DBMS_G15
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(191, 306);
+            this.label6.Location = new System.Drawing.Point(256, 376);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(125, 29);
+            this.label6.Size = new System.Drawing.Size(159, 36);
             this.label6.TabIndex = 3;
             this.label6.Text = "19127498";
             // 
@@ -438,9 +463,10 @@ namespace DBMS_G15
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(191, 248);
+            this.label5.Location = new System.Drawing.Point(256, 304);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(125, 29);
+            this.label5.Size = new System.Drawing.Size(159, 36);
             this.label5.TabIndex = 2;
             this.label5.Text = "19127608";
             // 
@@ -449,9 +475,10 @@ namespace DBMS_G15
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(322, 190);
+            this.label4.Location = new System.Drawing.Point(430, 233);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(132, 29);
+            this.label4.Size = new System.Drawing.Size(160, 36);
             this.label4.TabIndex = 1;
             this.label4.Text = "Họ và Tên";
             // 
@@ -460,23 +487,25 @@ namespace DBMS_G15
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(191, 190);
+            this.label3.Location = new System.Drawing.Point(256, 233);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 29);
+            this.label3.Size = new System.Drawing.Size(105, 36);
             this.label3.TabIndex = 0;
             this.label3.Text = "MSSV";
             // 
             // HomeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1055, 651);
+            this.ClientSize = new System.Drawing.Size(1407, 801);
             this.Controls.Add(this.childFormPanel);
             this.Controls.Add(this.menuPanel);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1071, 690);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(1422, 838);
             this.Name = "HomeForm";
             this.Text = "DBMS - Nhóm 15";
             this.panel1.ResumeLayout(false);

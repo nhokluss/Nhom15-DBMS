@@ -115,7 +115,7 @@ namespace DBMS_G15
             //    {
             //        connection.Open();
             //        SqlCommand checkProductExisted = new SqlCommand("select * from DOITAC where MaDT=@MaDT", connection);
-            //        checkProductExisted.Parameters.AddWithValue("@MaSP", tbID.Text);
+            //        checkProductExisted.Parameters.AddWithValue("@IDMonAn", tbID.Text);
             //        SqlDataReader reader = checkProductExisted.ExecuteReader();
             //        if (reader.HasRows)
             //        {
@@ -123,9 +123,9 @@ namespace DBMS_G15
             //            DialogResult confirm = MessageBox.Show("Xác nhận cập nhật thông tin đối tác này?", "Cập Nhật Đối Tác", MessageBoxButtons.YesNo);
             //            if (confirm == DialogResult.Yes)
             //            {
-            //                SqlCommand updateCommand = new SqlCommand("exec updateSP @MaSP, @TenSP, @Gia, @MoTa", connection);
-            //                updateCommand.Parameters.AddWithValue("@MaSP", tbID.Text);
-            //                updateCommand.Parameters.AddWithValue("@TenSP", tbName.Text);
+            //                SqlCommand updateCommand = new SqlCommand("exec updateSP @IDMonAn, @MonAn, @Gia, @MoTa", connection);
+            //                updateCommand.Parameters.AddWithValue("@IDMonAn", tbID.Text);
+            //                updateCommand.Parameters.AddWithValue("@MonAn", tbName.Text);
             //                updateCommand.Parameters.AddWithValue("@Gia", tbPrice.Text);
             //                updateCommand.Parameters.AddWithValue("@MoTa", tbDescription.Text);
             //                updateCommand.ExecuteNonQuery();

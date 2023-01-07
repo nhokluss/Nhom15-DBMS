@@ -107,9 +107,9 @@ namespace DBMS_G15
             if (searchBox.Text != placeholder && searchBox.Text != "")
             {
                 command = connection.CreateCommand();
-                command.CommandText = "select * from SANPHAM where TenSP = @TenSP";
+                command.CommandText = "select * from THUCDON where MonAn = @MonAn";
                 command.CommandType = CommandType.Text;
-                command.Parameters.AddWithValue("@TenSP", searchBox.Text);
+                command.Parameters.AddWithValue("@MonAn", searchBox.Text);
                 adapter.SelectCommand = command;
                 tableProduct.Clear();
                 adapter.Fill(tableProduct);
@@ -134,9 +134,9 @@ namespace DBMS_G15
                 {
                     connection.Open();
                     command = connection.CreateCommand();
-                    command.CommandText = "select cc.MaCN from CUNGCAP_SP cc, SANPHAM sp where cc.MaSP = @MaSP and sp.MaSP = cc.MaSP";
+                    command.CommandText = "select cc.MaCN from CUNGCAP_SP cc, THUCDON sp where cc.IDMonAn = @IDMonAn and sp.IDMonAn = cc.IDMonAn";
                     command.CommandType = CommandType.Text;
-                    command.Parameters.AddWithValue("@MaSP", tbID.Text);
+                    command.Parameters.AddWithValue("@IDMonAn", tbID.Text);
                     adapter.SelectCommand = command;
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
@@ -158,9 +158,9 @@ namespace DBMS_G15
                 if(searchBox.Text != placeholder && searchBox.Text != "")
                 {
                     command = connection.CreateCommand();
-                    command.CommandText = "select * from SANPHAM where TenSP = @TenSP";
+                    command.CommandText = "select * from THUCDON where MonAn = @MonAn";
                     command.CommandType = CommandType.Text;
-                    command.Parameters.AddWithValue("@TenSP", searchBox.Text);
+                    command.Parameters.AddWithValue("@MonAn", searchBox.Text);
                     adapter.SelectCommand = command;
                     tableProduct.Clear();
                     adapter.Fill(tableProduct);
@@ -176,14 +176,14 @@ namespace DBMS_G15
         {
             DataTable tb = new DataTable();
             command = connection.CreateCommand();
-            command.CommandText = "select * from SANPHAM where TenSP = @TenSP";
+            command.CommandText = "select * from THUCDON where MonAn = @MonAn";
             command.CommandType = CommandType.Text;
-            command.Parameters.AddWithValue("@TenSP", tbName.Text);
+            command.Parameters.AddWithValue("@MonAn", tbName.Text);
             adapter.SelectCommand = command;
             tb.Clear();
             adapter.Fill(tb);
-            tbID.Text = tb.Rows[0]["MaSP"].ToString();
-            tbName.Text = tb.Rows[0]["TenSP"].ToString();
+            tbID.Text = tb.Rows[0]["IDMonAn"].ToString();
+            tbName.Text = tb.Rows[0]["MonAn"].ToString();
             tbPrice.Text = tb.Rows[0]["Gia"].ToString();
             tbDescription.Text = tb.Rows[0]["MoTa"].ToString();
         }
@@ -200,8 +200,8 @@ namespace DBMS_G15
                     }
                     else
                     {
-                        SqlCommand checkProductExisted = new SqlCommand("exec lookupSP @MaSP", connection);
-                        checkProductExisted.Parameters.AddWithValue("@MaSP", tbID.Text);
+                        SqlCommand checkProductExisted = new SqlCommand("exec lookupSP @IDMonAn", connection);
+                        checkProductExisted.Parameters.AddWithValue("@IDMonAn", tbID.Text);
                         SqlDataReader reader = checkProductExisted.ExecuteReader();
                         if (reader.HasRows)
                         {
@@ -209,8 +209,8 @@ namespace DBMS_G15
                             DialogResult confirm = MessageBox.Show("Xác nhận xóa sản phẩm này?", "Xóa Sản Phẩm", MessageBoxButtons.YesNo);
                             if (confirm == DialogResult.Yes)
                             {
-                                SqlCommand deleteCommand = new SqlCommand("exec deleteSP @MaSP", connection);
-                                deleteCommand.Parameters.AddWithValue("@MaSP", tbID.Text);
+                                SqlCommand deleteCommand = new SqlCommand("exec deleteSP @IDMonAn", connection);
+                                deleteCommand.Parameters.AddWithValue("@IDMonAn", tbID.Text);
                                 deleteCommand.ExecuteNonQuery();
                                 tbID.Text = "";
                                 tbDescription.Text = "";
@@ -240,8 +240,8 @@ namespace DBMS_G15
                 try
                 {
                     connection.Open();
-                    SqlCommand checkProductExisted = new SqlCommand("exec lookupSP @MaSP", connection);
-                    checkProductExisted.Parameters.AddWithValue("@MaSP", tbID.Text);
+                    SqlCommand checkProductExisted = new SqlCommand("exec lookupSP @IDMonAn", connection);
+                    checkProductExisted.Parameters.AddWithValue("@IDMonAn", tbID.Text);
                     SqlDataReader reader = checkProductExisted.ExecuteReader();
                     if (reader.HasRows)
                     {
@@ -249,9 +249,9 @@ namespace DBMS_G15
                         DialogResult confirm = MessageBox.Show("Xác nhận cập nhật sản phẩm này?", "Cập Nhật Sản Phẩm", MessageBoxButtons.YesNo);
                         if (confirm == DialogResult.Yes)
                         {
-                            SqlCommand updateCommand = new SqlCommand("exec updateSP @MaSP, @TenSP, @Gia, @MoTa", connection);
-                            updateCommand.Parameters.AddWithValue("@MaSP", tbID.Text);
-                            updateCommand.Parameters.AddWithValue("@TenSP", tbName.Text);
+                            SqlCommand updateCommand = new SqlCommand("exec updateSP @IDMonAn, @MonAn, @Gia, @MoTa", connection);
+                            updateCommand.Parameters.AddWithValue("@IDMonAn", tbID.Text);
+                            updateCommand.Parameters.AddWithValue("@MonAn", tbName.Text);
                             updateCommand.Parameters.AddWithValue("@Gia", tbPrice.Text);
                             updateCommand.Parameters.AddWithValue("@MoTa", tbDescription.Text);
                             updateCommand.ExecuteNonQuery();
@@ -286,14 +286,14 @@ namespace DBMS_G15
                 {
                     try
                     {
-                        SqlCommand checkProductExisted = new SqlCommand("select * from SANPHAM where TenSP = @TenSP", connection);
-                        checkProductExisted.Parameters.AddWithValue("@TenSP", tbName.Text);
+                        SqlCommand checkProductExisted = new SqlCommand("select * from THUCDON where MonAn = @MonAn", connection);
+                        checkProductExisted.Parameters.AddWithValue("@MonAn", tbName.Text);
                         SqlDataReader reader2 = checkProductExisted.ExecuteReader();
                         if (!reader2.HasRows)
                         {
                             reader2.Close();
-                            SqlCommand cmd = new SqlCommand("exec addSP @TenSP, @Gia, @MoTa", connection);
-                            cmd.Parameters.AddWithValue("@TenSP", tbName.Text);
+                            SqlCommand cmd = new SqlCommand("exec addSP @MonAn, @Gia, @MoTa", connection);
+                            cmd.Parameters.AddWithValue("@MonAn", tbName.Text);
                             cmd.Parameters.AddWithValue("@Gia", tbPrice.Text);
                             cmd.Parameters.AddWithValue("@MoTa", tbDescription.Text);
                             cmd.ExecuteNonQuery();

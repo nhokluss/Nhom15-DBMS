@@ -37,14 +37,14 @@ namespace DBMS_G15
                 {
                     connection.Open();
                     command = connection.CreateCommand();
-                    command.CommandText = "select MaSP,TenSP from SANPHAM";
+                    command.CommandText = "select IDMonAn,MonAn from THUCDON";
                     command.CommandType = CommandType.Text;
                     adapter.SelectCommand = command;
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
                     cbbProduct.DataSource = dt;
-                    cbbProduct.DisplayMember = "TenSP";
-                    cbbProduct.ValueMember = "MaSP";
+                    cbbProduct.DisplayMember = "MonAn";
+                    cbbProduct.ValueMember = "IDMonAn";
                     cbbProduct.SelectedItem = null;
                 }
                 catch (Exception ex)
@@ -146,9 +146,9 @@ namespace DBMS_G15
                         try
                         {
                             connection.Open();
-                            SqlCommand updateCommand = new SqlCommand("Insert into CHITIETDONHANG(MaDH,MaSP,SoLuong) values (@MaDH,@MaSP,@SL)", connection);
+                            SqlCommand updateCommand = new SqlCommand("Insert into CHITIETDONHANG(MaDH,IDMonAn,SoLuong) values (@MaDH,@IDMonAn,@SL)", connection);
                             updateCommand.Parameters.AddWithValue("@MaDH", OrderDGV.CurrentRow.Cells[0].Value);
-                            updateCommand.Parameters.AddWithValue("@MaSP", cbbProduct.SelectedValue);
+                            updateCommand.Parameters.AddWithValue("@IDMonAn", cbbProduct.SelectedValue);
                             updateCommand.Parameters.AddWithValue("@SL", numericUpDown1.Value);
                             updateCommand.ExecuteNonQuery();
                             LoadDetailOrder();
@@ -267,7 +267,7 @@ namespace DBMS_G15
                     connection.Open();
                     DataTable tbDetailOrder = new DataTable();
                     command = connection.CreateCommand();
-                    command.CommandText = "select CT.MaDH,SP.MaSP,SP.TenSP,CT.SoLuong,CT.ThanhTien from CHITIETDONHANG CT,SANPHAM SP where CT.MaDH=@MaDH and CT.MaSP=SP.MaSP";
+                    command.CommandText = "select CT.MaDH,SP.IDMonAn,SP.MonAn,CT.SoLuong,CT.ThanhTien from CHITIETDONHANG CT,THUCDON SP where CT.MaDH=@MaDH and CT.IDMonAn=SP.IDMonAn";
                     command.CommandType = CommandType.Text;
                     command.Parameters.AddWithValue("@MaDH", OrderDGV.CurrentRow.Cells[0].Value);
                     adapter.SelectCommand = command;
@@ -309,9 +309,9 @@ namespace DBMS_G15
                     try
                     {
                         connection.Open();
-                        SqlCommand DeleteCommand = new SqlCommand("delete from CHITIETDONHANG WHERE MaDH=@MaDH and MaSP=@MaSP", connection);
+                        SqlCommand DeleteCommand = new SqlCommand("delete from CHITIETDONHANG WHERE MaDH=@MaDH and IDMonAn=@IDMonAn", connection);
                         DeleteCommand.Parameters.AddWithValue("@MaDH", DetailOrderDGV.CurrentRow.Cells[0].Value);
-                        DeleteCommand.Parameters.AddWithValue("@MaSP", DetailOrderDGV.CurrentRow.Cells[1].Value);
+                        DeleteCommand.Parameters.AddWithValue("@IDMonAn", DetailOrderDGV.CurrentRow.Cells[1].Value);
                         DeleteCommand.ExecuteNonQuery();
                         LoadDetailOrder();
                         LoadOrder();

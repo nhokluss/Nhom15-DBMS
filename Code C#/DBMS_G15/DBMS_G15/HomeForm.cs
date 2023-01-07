@@ -193,5 +193,10 @@ namespace DBMS_G15
                 OpenChildForm(new DriverProfile(IDDriver));
             }
         }
+
+        private void childFormPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
