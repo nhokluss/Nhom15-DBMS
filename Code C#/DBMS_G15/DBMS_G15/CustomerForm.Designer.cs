@@ -29,10 +29,11 @@ namespace DBMS_G15
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerForm));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelDetails = new System.Windows.Forms.Panel();
+            this.btnReload = new System.Windows.Forms.Button();
             this.customerEmailLabel = new System.Windows.Forms.Label();
             this.customerPhoneLabel = new System.Windows.Forms.Label();
             this.customerAddressLabel = new System.Windows.Forms.Label();
@@ -46,16 +47,15 @@ namespace DBMS_G15
             this.tbID = new System.Windows.Forms.TextBox();
             this.customerDGV = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnUnlock = new System.Windows.Forms.Button();
+            this.btnLock = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.panelNavigator = new System.Windows.Forms.Panel();
             this.searchBtn = new System.Windows.Forms.Button();
-            this.btnReload = new System.Windows.Forms.Button();
-            this.btnUnlock = new System.Windows.Forms.Button();
-            this.btnLock = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panelDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerDGV)).BeginInit();
@@ -69,8 +69,9 @@ namespace DBMS_G15
             this.panel2.Controls.Add(this.customerDGV);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(736, 513);
+            this.panel2.Size = new System.Drawing.Size(981, 632);
             this.panel2.TabIndex = 6;
             // 
             // panelDetails
@@ -90,17 +91,31 @@ namespace DBMS_G15
             this.panelDetails.Controls.Add(this.tbID);
             this.panelDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDetails.Location = new System.Drawing.Point(0, 0);
+            this.panelDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelDetails.Name = "panelDetails";
-            this.panelDetails.Size = new System.Drawing.Size(736, 157);
+            this.panelDetails.Size = new System.Drawing.Size(981, 194);
             this.panelDetails.TabIndex = 1;
+            // 
+            // btnReload
+            // 
+            this.btnReload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReload.Image = global::DBMS_G15.Properties.Resources.reload;
+            this.btnReload.Location = new System.Drawing.Point(943, 165);
+            this.btnReload.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(39, 30);
+            this.btnReload.TabIndex = 11;
+            this.btnReload.UseVisualStyleBackColor = true;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // customerEmailLabel
             // 
             this.customerEmailLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.customerEmailLabel.AutoSize = true;
-            this.customerEmailLabel.Location = new System.Drawing.Point(521, 100);
+            this.customerEmailLabel.Location = new System.Drawing.Point(695, 123);
+            this.customerEmailLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.customerEmailLabel.Name = "customerEmailLabel";
-            this.customerEmailLabel.Size = new System.Drawing.Size(32, 13);
+            this.customerEmailLabel.Size = new System.Drawing.Size(42, 17);
             this.customerEmailLabel.TabIndex = 10;
             this.customerEmailLabel.Text = "Email";
             // 
@@ -108,9 +123,10 @@ namespace DBMS_G15
             // 
             this.customerPhoneLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.customerPhoneLabel.AutoSize = true;
-            this.customerPhoneLabel.Location = new System.Drawing.Point(522, 40);
+            this.customerPhoneLabel.Location = new System.Drawing.Point(696, 49);
+            this.customerPhoneLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.customerPhoneLabel.Name = "customerPhoneLabel";
-            this.customerPhoneLabel.Size = new System.Drawing.Size(75, 13);
+            this.customerPhoneLabel.Size = new System.Drawing.Size(98, 17);
             this.customerPhoneLabel.TabIndex = 9;
             this.customerPhoneLabel.Text = "Số Điện Thoại";
             // 
@@ -118,9 +134,10 @@ namespace DBMS_G15
             // 
             this.customerAddressLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.customerAddressLabel.AutoSize = true;
-            this.customerAddressLabel.Location = new System.Drawing.Point(287, 100);
+            this.customerAddressLabel.Location = new System.Drawing.Point(383, 123);
+            this.customerAddressLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.customerAddressLabel.Name = "customerAddressLabel";
-            this.customerAddressLabel.Size = new System.Drawing.Size(41, 13);
+            this.customerAddressLabel.Size = new System.Drawing.Size(53, 17);
             this.customerAddressLabel.TabIndex = 8;
             this.customerAddressLabel.Text = "Địa Chỉ";
             // 
@@ -128,18 +145,20 @@ namespace DBMS_G15
             // 
             this.customerNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.customerNameLabel.AutoSize = true;
-            this.customerNameLabel.Location = new System.Drawing.Point(287, 40);
+            this.customerNameLabel.Location = new System.Drawing.Point(383, 49);
+            this.customerNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.customerNameLabel.Name = "customerNameLabel";
-            this.customerNameLabel.Size = new System.Drawing.Size(59, 13);
+            this.customerNameLabel.Size = new System.Drawing.Size(76, 17);
             this.customerNameLabel.TabIndex = 7;
             this.customerNameLabel.Text = "Họ Và Tên";
             // 
             // customerIDLabel
             // 
             this.customerIDLabel.AutoSize = true;
-            this.customerIDLabel.Location = new System.Drawing.Point(53, 100);
+            this.customerIDLabel.Location = new System.Drawing.Point(71, 123);
+            this.customerIDLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.customerIDLabel.Name = "customerIDLabel";
-            this.customerIDLabel.Size = new System.Drawing.Size(85, 13);
+            this.customerIDLabel.Size = new System.Drawing.Size(109, 17);
             this.customerIDLabel.TabIndex = 6;
             this.customerIDLabel.Text = "Mã Khách Hàng";
             // 
@@ -147,50 +166,56 @@ namespace DBMS_G15
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(48, 21);
+            this.label1.Location = new System.Drawing.Point(64, 26);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 58);
+            this.label1.Size = new System.Drawing.Size(189, 72);
             this.label1.TabIndex = 5;
             this.label1.Text = "Thông Tin\r\nKhách Hàng";
             // 
             // tbEmail
             // 
             this.tbEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbEmail.Location = new System.Drawing.Point(521, 119);
+            this.tbEmail.Location = new System.Drawing.Point(695, 146);
+            this.tbEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(161, 20);
+            this.tbEmail.Size = new System.Drawing.Size(213, 22);
             this.tbEmail.TabIndex = 4;
             // 
             // tbAddress
             // 
             this.tbAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.tbAddress.Location = new System.Drawing.Point(287, 119);
+            this.tbAddress.Location = new System.Drawing.Point(383, 146);
+            this.tbAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbAddress.Name = "tbAddress";
-            this.tbAddress.Size = new System.Drawing.Size(161, 20);
+            this.tbAddress.Size = new System.Drawing.Size(213, 22);
             this.tbAddress.TabIndex = 3;
             // 
             // tbPhone
             // 
             this.tbPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbPhone.Location = new System.Drawing.Point(522, 59);
+            this.tbPhone.Location = new System.Drawing.Point(696, 73);
+            this.tbPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbPhone.Name = "tbPhone";
-            this.tbPhone.Size = new System.Drawing.Size(161, 20);
+            this.tbPhone.Size = new System.Drawing.Size(213, 22);
             this.tbPhone.TabIndex = 2;
             // 
             // tbName
             // 
             this.tbName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.tbName.Location = new System.Drawing.Point(287, 59);
+            this.tbName.Location = new System.Drawing.Point(383, 73);
+            this.tbName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(161, 20);
+            this.tbName.Size = new System.Drawing.Size(213, 22);
             this.tbName.TabIndex = 1;
             // 
             // tbID
             // 
-            this.tbID.Location = new System.Drawing.Point(53, 119);
+            this.tbID.Location = new System.Drawing.Point(71, 146);
+            this.tbID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbID.Name = "tbID";
             this.tbID.ReadOnly = true;
-            this.tbID.Size = new System.Drawing.Size(161, 20);
+            this.tbID.Size = new System.Drawing.Size(213, 22);
             this.tbID.TabIndex = 0;
             // 
             // customerDGV
@@ -201,22 +226,24 @@ namespace DBMS_G15
             this.customerDGV.AllowUserToResizeRows = false;
             this.customerDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.customerDGV.BackgroundColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.customerDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.customerDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.customerDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.customerDGV.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.customerDGV.GridColor = System.Drawing.Color.Gainsboro;
-            this.customerDGV.Location = new System.Drawing.Point(0, 157);
+            this.customerDGV.Location = new System.Drawing.Point(0, 194);
+            this.customerDGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.customerDGV.Name = "customerDGV";
             this.customerDGV.ReadOnly = true;
+            this.customerDGV.RowHeadersWidth = 51;
             this.customerDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.customerDGV.Size = new System.Drawing.Size(736, 356);
+            this.customerDGV.Size = new System.Drawing.Size(981, 438);
             this.customerDGV.TabIndex = 0;
             this.customerDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerDGV_CellClick);
             // 
@@ -228,85 +255,11 @@ namespace DBMS_G15
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(736, 0);
+            this.panel1.Location = new System.Drawing.Point(981, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(72, 583);
+            this.panel1.Size = new System.Drawing.Size(96, 718);
             this.panel1.TabIndex = 4;
-            // 
-            // btnPrevious
-            // 
-            this.btnPrevious.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPrevious.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrevious.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrevious.Location = new System.Drawing.Point(114, 10);
-            this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(100, 50);
-            this.btnPrevious.TabIndex = 0;
-            this.btnPrevious.Text = "<";
-            this.btnPrevious.UseVisualStyleBackColor = false;
-            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
-            // 
-            // btnNext
-            // 
-            this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNext.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.Location = new System.Drawing.Point(522, 11);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(100, 50);
-            this.btnNext.TabIndex = 1;
-            this.btnNext.Text = ">";
-            this.btnNext.UseVisualStyleBackColor = false;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
-            // 
-            // searchBox
-            // 
-            this.searchBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.searchBox.Location = new System.Drawing.Point(293, 10);
-            this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(152, 20);
-            this.searchBox.TabIndex = 2;
-            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
-            this.searchBox.Enter += new System.EventHandler(this.searchBox_Enter);
-            this.searchBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchBox_KeyPress);
-            this.searchBox.Leave += new System.EventHandler(this.searchBox_Leave);
-            // 
-            // panelNavigator
-            // 
-            this.panelNavigator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(67)))), ((int)(((byte)(138)))));
-            this.panelNavigator.Controls.Add(this.searchBtn);
-            this.panelNavigator.Controls.Add(this.searchBox);
-            this.panelNavigator.Controls.Add(this.btnNext);
-            this.panelNavigator.Controls.Add(this.btnPrevious);
-            this.panelNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelNavigator.Location = new System.Drawing.Point(0, 513);
-            this.panelNavigator.Name = "panelNavigator";
-            this.panelNavigator.Size = new System.Drawing.Size(736, 70);
-            this.panelNavigator.TabIndex = 5;
-            // 
-            // searchBtn
-            // 
-            this.searchBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.searchBtn.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.searchBtn.Location = new System.Drawing.Point(334, 37);
-            this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(75, 23);
-            this.searchBtn.TabIndex = 5;
-            this.searchBtn.Text = "Tìm";
-            this.searchBtn.UseVisualStyleBackColor = false;
-            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
-            // 
-            // btnReload
-            // 
-            this.btnReload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReload.Image = global::DBMS_G15.Properties.Resources.reload;
-            this.btnReload.Location = new System.Drawing.Point(707, 133);
-            this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(29, 24);
-            this.btnReload.TabIndex = 11;
-            this.btnReload.UseVisualStyleBackColor = true;
-            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // btnUnlock
             // 
@@ -318,9 +271,10 @@ namespace DBMS_G15
             this.btnUnlock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUnlock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUnlock.Image = global::DBMS_G15.Properties.Resources.unlock;
-            this.btnUnlock.Location = new System.Drawing.Point(0, 435);
+            this.btnUnlock.Location = new System.Drawing.Point(0, 534);
+            this.btnUnlock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUnlock.Name = "btnUnlock";
-            this.btnUnlock.Size = new System.Drawing.Size(72, 145);
+            this.btnUnlock.Size = new System.Drawing.Size(96, 178);
             this.btnUnlock.TabIndex = 25;
             this.btnUnlock.Text = "Mở Khóa";
             this.btnUnlock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -336,9 +290,10 @@ namespace DBMS_G15
             this.btnLock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLock.Image = global::DBMS_G15.Properties.Resources._lock;
-            this.btnLock.Location = new System.Drawing.Point(0, 290);
+            this.btnLock.Location = new System.Drawing.Point(0, 356);
+            this.btnLock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLock.Name = "btnLock";
-            this.btnLock.Size = new System.Drawing.Size(72, 145);
+            this.btnLock.Size = new System.Drawing.Size(96, 178);
             this.btnLock.TabIndex = 24;
             this.btnLock.Text = "Khóa";
             this.btnLock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -355,9 +310,10 @@ namespace DBMS_G15
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.Location = new System.Drawing.Point(0, 145);
+            this.btnSave.Location = new System.Drawing.Point(0, 178);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(72, 145);
+            this.btnSave.Size = new System.Drawing.Size(96, 178);
             this.btnSave.TabIndex = 23;
             this.btnSave.Text = "Lưu";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -376,23 +332,94 @@ namespace DBMS_G15
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.Location = new System.Drawing.Point(0, 0);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(72, 145);
+            this.btnAdd.Size = new System.Drawing.Size(96, 178);
             this.btnAdd.TabIndex = 22;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // btnPrevious
+            // 
+            this.btnPrevious.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPrevious.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrevious.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious.Location = new System.Drawing.Point(152, 12);
+            this.btnPrevious.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(133, 62);
+            this.btnPrevious.TabIndex = 0;
+            this.btnPrevious.Text = "<";
+            this.btnPrevious.UseVisualStyleBackColor = false;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNext.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Location = new System.Drawing.Point(696, 14);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(133, 62);
+            this.btnNext.TabIndex = 1;
+            this.btnNext.Text = ">";
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // searchBox
+            // 
+            this.searchBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.searchBox.Location = new System.Drawing.Point(391, 12);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(201, 22);
+            this.searchBox.TabIndex = 2;
+            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
+            this.searchBox.Enter += new System.EventHandler(this.searchBox_Enter);
+            this.searchBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchBox_KeyPress);
+            this.searchBox.Leave += new System.EventHandler(this.searchBox_Leave);
+            // 
+            // panelNavigator
+            // 
+            this.panelNavigator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(67)))), ((int)(((byte)(138)))));
+            this.panelNavigator.Controls.Add(this.searchBtn);
+            this.panelNavigator.Controls.Add(this.searchBox);
+            this.panelNavigator.Controls.Add(this.btnNext);
+            this.panelNavigator.Controls.Add(this.btnPrevious);
+            this.panelNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelNavigator.Location = new System.Drawing.Point(0, 632);
+            this.panelNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelNavigator.Name = "panelNavigator";
+            this.panelNavigator.Size = new System.Drawing.Size(981, 86);
+            this.panelNavigator.TabIndex = 5;
+            // 
+            // searchBtn
+            // 
+            this.searchBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.searchBtn.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.searchBtn.Location = new System.Drawing.Point(445, 46);
+            this.searchBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(100, 28);
+            this.searchBtn.TabIndex = 5;
+            this.searchBtn.Text = "Tìm";
+            this.searchBtn.UseVisualStyleBackColor = false;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            // 
             // CustomerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(808, 583);
+            this.ClientSize = new System.Drawing.Size(1077, 718);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelNavigator);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "CustomerForm";
             this.Text = "CustomerForm";
             this.Load += new System.EventHandler(this.CustomerForm_Load);
